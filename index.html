@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salidas</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+    table {
+      border-collapse: separate;
+      width: 100%;
+      background-color: #716c6c;
+      
+
+    }
+    td, th {
+      border: 2px solid #000000;
+      padding: 6px;
+      text-align: left;
+    }
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+     <!--LA FECHA DE LA SALIDA-->
+<h1>SALIDAS DE PREDICACIÓN SEMANA DEL 26/5</h1>
+<div id="table-container">Cargando datos...</div>
+     <!--Calles-->
+<script>
+  const links = {
+    "Calle 1149 Y 1128": "https://www.google.com.ar/maps/place/C.+1149+%26+C.+1128+A,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8646999,-58.201147,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d792a20c8f33:0x4dc68357cf6ee562!8m2!3d-34.8646999!4d-58.201147!16s%2Fg%2F11h9vltpzj?hl=es&entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D",
+    "10":"T png/Territorio 1.jpg",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    // Agrega aquí más nombres de calles y URLs
+  };
+   const colores = {
+    "SALIDAS DE PREDICACIÓN SEMANA DEL 26/5": "rgb(251, 248, 102)",     // Amarillo
+    "Dia":"#ffffff",
+    "Hora":"#ffffff",
+    "Punto de encuentro":"#ffffff",
+    "Territorio":"#ffffff",
+    "Conductor":"#ffffff",
+    "Grupos":"#ffffff",
+    "": "",    
+    "": "",      
+
+  };
+
+  async function loadExcel() {
+    const response = await fetch('Salidas 17-6-24.xlsx');
+    const data = await response.arrayBuffer();
+    const workbook = XLSX.read(data, { type: 'array' });
+
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    const html = XLSX.utils.sheet_to_html(sheet, { editable: false });
+    const container = document.getElementById('table-container');
+    container.innerHTML = html;
+
+    const rows = container.querySelectorAll("tr");
+    rows.forEach((tr, rowIndex) => {
+      const cells = tr.querySelectorAll("td");
+      cells.forEach((td, colIndex) => {
+        const text = td.textContent.trim();
+
+        // Si es una palabra con enlace
+        if (links[text]) {
+          td.innerHTML = `<a href="${links[text]}" target="_blank">${text}</a>`;
+        }
+
+        // Si el texto coincide con un color
+        if (colores[text]) {
+          td.style.backgroundColor = colores[text];
+        }
+
+        // OPCIONAL: por columna (ejemplo columna 3 = amarilla)
+        //if (colIndex === 6) td.style.backgroundColor = "#ffffff"; 
+        //if (colIndex === 7) td.style.backgroundColor = "#ffffff";
+        //if (colIndex === 8) td.style.backgroundColor = "#ffffff";
+
+        // OPCIONAL: por fila (ejemplo fila 2 = verde)
+        if (rowIndex === 2) td.style.backgroundColor = "#ffffff";
+        if (rowIndex === 3) td.style.backgroundColor = "#3c7e1b";
+        if (rowIndex === 4) td.style.backgroundColor = "#ffffff";
+        if (rowIndex === 5) td.style.backgroundColor = "#3c7e1b";
+        if (rowIndex === 6) td.style.backgroundColor = "#ffffff";
+        if (rowIndex === 7) td.style.backgroundColor = "#3c7e1b";
+        if (rowIndex === 8) td.style.backgroundColor = "#ffffff";
+        if (rowIndex === 9) td.style.backgroundColor = "#3c7e1b";
+        if (rowIndex === 10) td.style.backgroundColor = "#ffffff";
+        if (rowIndex === 11) td.style.backgroundColor = "#3c7e1b";
+        if (rowIndex === 12) td.style.backgroundColor = "#ebe719";
+        if (rowIndex === 13) td.style.backgroundColor = "#ebe719";
+        if (rowIndex === 14) td.style.backgroundColor = "#ebe719";
+        if (rowIndex === 15) td.style.backgroundColor = "#ebe719";
+        if (rowIndex === 16) td.style.backgroundColor = "#ebe719";
+        
+      });
+    });
+  }
+ 
+  loadExcel();
+</script>
+
+</body>
+</html>
