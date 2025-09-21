@@ -33,28 +33,29 @@
 <div id="table-container">Espere Mientras se Carga Las Salidas...</div>
 <script>
   const links = {
-    "Calle 1145 Y 1128":"https://www.google.com.ar/maps/place/C.+1145+1401,+B1891DPG+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8666531,-58.2059797,17z/data=!3m1!4b1!4m5!3m4!1s0x95a2d792514796c7:0xdfec84cc4aecd45a!8m2!3d-34.8666575!4d-58.2034048?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-    "9": "T png/Territorio 9.jpg",
-    "Calle 1209 Y 1270":"https://www.google.com.ar/maps/place/C.+1270+A+479,+B1891CHG+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8610123,-58.1939265,17z/data=!3m1!4b1!4m5!3m4!1s0x95a2d78ab65a216d:0xca4752a3aef3cc99!8m2!3d-34.8610167!4d-58.1913516?hl=es&entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
-    "61": "T png/Territorio 61.jpg",
-    "Casa Flia Frattasi":"https://www.google.com.ar/maps/place/C.+1149+1887,+B1891DJW+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8693332,-58.198063,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d78f29d1ad1f:0xfccb0c7cb5e80c99!8m2!3d-34.8693376!4d-58.1954881!16s%2Fg%2F11lmqdrxb6?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
+    "Calle 1282 Y 1209":"https://www.google.com.ar/maps/place/Calle+1282+%26+Juan+Bialet+Mass%C3%A9,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8649066,-58.1923537,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d78a039a6465:0x1689b615fb1a95bd!8m2!3d-34.864911!4d-58.1897788!16s%2Fg%2F11f2_qhz01?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "57": "T png/Territorio 57.jpg",
+    "Calle 1209 Y 1268":"https://www.google.com.ar/maps/place/Calle+1268+%26+Juan+Bialet+Mass%C3%A9,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8603525,-58.1942005,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d7f52e991a7b:0xfb33c2a615f83e7!8m2!3d-34.8603569!4d-58.1916256!16s%2Fg%2F11gdlxdf1v?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "62": "T png/Territorio 62.jpg",
+    "Calle 1145 Y 1138":"https://www.google.com.ar/maps/place/C.+1145+%26+C.+1138,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8709411,-58.2008171,16.25z/data=!4m6!3m5!1s0x95a2d78f738e6315:0x5ea805a0057e7200!8m2!3d-34.8713178!4d-58.1974527!16s%2Fg%2F11h9rrdqdq?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
     "19":" T png/Territorio 19.jpg",
-    "Calle 1155 Y 1146":"https://www.google.com.ar/maps/place/C.+1146+%26+C.+1155,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8682015,-58.1919663,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d7882797c3d7:0xdd688d2d78865788!8m2!3d-34.8682059!4d-58.1893914!16s%2Fg%2F11h9rgt1fs?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-    "25":"T png/Territorio 25.jpg",
-    "Calle 1149 Y 1142":"https://www.google.com.ar/maps/place/C.+1142+%26+C.+1149,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8696524,-58.1958981,16.75z/data=!4m6!3m5!1s0x95a2d788b9307a65:0xb276db1aeb6fd4ed!8m2!3d-34.8702778!4d-58.1940208!16s%2Fg%2F11f2y2pp36?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D", 
-    "23":"T png/Territorio 23.jpg",
-    "Calle 1209 Y 1282":"https://www.google.com.ar/maps/place/Calle+1282+%26+Juan+Bialet+Mass%C3%A9,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8649066,-58.1923537,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d78a039a6465:0x1689b615fb1a95bd!8m2!3d-34.864911!4d-58.1897788!16s%2Fg%2F11f2_qhz01?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-    "30":"T png/Territorio 30.jpg",
-    "Casa America":"https://www.google.com.ar/maps/place/C.+1122+3010,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8589264,-58.2041085,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d7ede365585f:0xcd4215b30bc24672!8m2!3d-34.8589308!4d-58.2015336!16s%2Fg%2F11vj3kqhzn?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-    "":"T png/Territorio .jpg",
-    "Calle 1282 Y 1213":"https://www.google.com.ar/maps/place/C.+1126+%26+C.+1149,+B1888+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8637569,-58.2049096,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d7ed34dc0cf3:0x307e70c54e693479!8m2!3d-34.8637613!4d-58.2023347!16s%2Fg%2F11gdq10knv?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-    "59":"t png/Territorio 59.jpg",
+    "":"",
+    "":"",
+    "Casa De Jonatan S":"https://www.google.com.ar/maps/place/C.+1145+2763,+B1891DQG+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8704994,-58.1809136,3a,75y,7.63h,80.55t/data=!3m7!1e1!3m5!1s8d43D3rSvGn9lxxYrBBiaw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D9.448253663672673%26panoid%3D8d43D3rSvGn9lxxYrBBiaw%26yaw%3D7.628217012227651!7i16384!8i8192!4m6!3m5!1s0x95a2d786d6df75ad:0xecdf5e6ea8201fa!8m2!3d-34.8753894!4d-58.1924148!16s%2Fg%2F11vstsd3zp?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "44":"T png/Territorio 44.jpg",
+    "Casa De Alejandro P":"https://www.google.com.ar/maps/place/C.+1132+2346,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8669712,-58.2007157,17z/data=!4m6!3m5!1s0x95a2d78dd208454f:0x846b283b5a8c5897!8m2!3d-34.8669834!4d-58.1981387!16s%2Fg%2F11yhhly8wh?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "15":"T png/Territorio 15.jpg",
+    "Casa De Alberto P":"https://www.google.com.ar/maps/place/C.+1256+658,+B1891CAJ+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8556145,-58.1929886,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d7f5e165b72d:0x5772ba092b5bf171!8m2!3d-34.8556189!4d-58.1904137!16s%2Fg%2F11vjlccrd0?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "64":"T png/Territorio 64.jpg",
     "Predicacion Telefonica Zoom":"https://jworg.zoom.us/j/4811203850?pwd=dDdzT3M2azVEbkNGZDE2SmFqREJGUT09#success",
-    "Casa Flia Sergio Ojeda":"https://www.google.com.ar/maps/place/C.+188+1054,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8589688,-58.1867279,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d821fb0c76c3:0xcaa897e9f6c8e453!8m2!3d-34.8589732!4d-58.184153!16s%2Fg%2F11y32zrln6?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-    "66":"T png/Territorio 66.jpg",
-    "Casa Flia Daniel Caceres":"https://www.google.com.ar/maps/place/C.+1139+2823,+B1891DZE+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8788654,-58.1977612,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d783d42d4323:0xd3231aca97582df!8m2!3d-34.8788698!4d-58.1951863!16s%2Fg%2F11nnp2h0sq?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-    "":"T png/Territorio .jpg",
-    
+    "Casa De Sandra V":"https://www.google.com.ar/maps/place/CMC,+C.+1207+3810,+B1891+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8635505,-58.1926581,19z/data=!3m1!4b1!4m6!3m5!1s0x95a2d78a54ec5721:0xc33c8faf5ab209ff!8m2!3d-34.8635516!4d-58.1920144!16s%2Fg%2F11vstmjf7p?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "30":"T png/Territorio 30.jpg",
+    "Casa De Marisa F":"https://www.google.com.ar/maps/place/C.+1145+2763,+B1891DQG+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.875385,-58.1949897,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d786d6df75ad:0xecdf5e6ea8201fa!8m2!3d-34.8753894!4d-58.1924148!16s%2Fg%2F11vstsd3zp?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "27":"T png/Territorio 27.jpg",
+    "Casa De Jose L":"https://www.google.com.ar/maps/place/C.+1145+2763,+B1891DQG+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.875385,-58.1949897,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2d786d6df75ad:0xecdf5e6ea8201fa!8m2!3d-34.8753894!4d-58.1924148!16s%2Fg%2F11vstsd3zp?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "56":"T png/Territorio 56.jpg",
+    "Casa De Oscar M":"https://www.google.com.ar/maps/place/C.+1145+1282,+B1891DPD+Ingeniero+Juan+Allan,+Provincia+de+Buenos+Aires/@-34.8655209,-58.205459,19z/data=!3m1!4b1!4m5!3m4!1s0x95a2d793488e9f91:0x21655e90c192882e!8m2!3d-34.865522!4d-58.2048153?hl=es&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D",
+    "5":"T png/Territorio 5.jpg",
   };
    const colores = {    
     "Dia":"#ffffff",
@@ -111,7 +112,7 @@
         if (rowIndex === 8) td.style.backgroundColor = "#ffffff";
         if (rowIndex === 9) td.style.backgroundColor = "#2ab121ff";
         if (rowIndex === 10) td.style.backgroundColor = "#ffffff";
-        if (rowIndex === 11) td.style.backgroundColor = "#ebe719";
+        if (rowIndex === 11) td.style.backgroundColor = "#2ab121ff";
         if (rowIndex === 12) td.style.backgroundColor = "#ebe719";
         if (rowIndex === 13) td.style.backgroundColor = "#ebe719";
         if (rowIndex === 14) td.style.backgroundColor = "#ebe719";
